@@ -29,7 +29,7 @@ Your PowerShell Script will use these main commands:
 ```
 4.) Type `Y` to confirm.   
 
-♻️🛜<ins>***IP Configuration Reset Tool***<ins>🛜♻️
+♻️<ins>***IP Configuration Reset Tool***<ins>♻️
 ```bash
 <#
 .SYNOPSIS
