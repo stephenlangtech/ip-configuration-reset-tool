@@ -13,7 +13,7 @@ Your PowerShell Script will use these main commands:
 
 `ipconfig /release` - releases the current IP address assigned to your computer.  
 `ipconfig /flushdns` - refreshes the DNS cache and clears stored DNS records.  
-`**netsh winsock reset**` - reset Windows network sockets that are corrupted.  
+`netsh winsock reset` - reset Windows network sockets that are corrupted.  
 `netsh int ip reset` - resets TCP/IP stack to its default configuration.  
 `ipconifg /renew` - requests and assigns a new IP address from the DHCP server to your computer.  
 `ipconfig /all` - displays the network adapter details such as IP, Default Gateway, DNS, etc.   
