@@ -23,7 +23,7 @@ Your PowerShell Script will use these main commands:
 1.) Save it as:   
 `ipconfigresettool.ps1`   
 2.) Run **PowerShell** as an **Administrator**   
-3.) Navigate to the folder and execute the file by right-clicking and selecting "Run in PowerShell":  
+3.) Navigate to the folder and execute the file by right-clicking and selecting **"Run in PowerShell"**:  
 ```bash
 .\ipconfigresettool.ps1
 ```
