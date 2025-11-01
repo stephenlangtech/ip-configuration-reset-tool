@@ -28,7 +28,7 @@ Your PowerShell Script will use these main commands:
 .\ipconfigresettool.ps1
 ```
 4.) Type `Y` to confirm.  
-**Alternative**: Just copy and paste the script in **PowerShell**
+5.) * Alternative: Just copy and paste the script in **PowerShell** *
 
 ♻️<ins>***IP Configuration Reset Tool***<ins>♻️
 ```bash
