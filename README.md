@@ -28,3 +28,62 @@ Your PowerShell Script will use these main commands:
 .\ipconfigresettool.ps1
 ```
 4.) Type `Y` to confirm.   
+
+<ins>***IP Configuration Reset Tool***<ins>  
+```bash
+<#
+.SYNOPSIS
+IP Configuration Reset Tool
+
+.DESCRIPTION
+This PowerShell script resets the network adapter, clears DNS cache, renews the IP address,
+and resets Winsock and TCP/IP settings to restore network connectivity.
+
+.AUTHOR
+Stephen Langley
+#>
+
+Write-Host "============================================" -ForegroundColor Cyan
+Write-Host "        IP CONFIGURATION RESET TOOL" -ForegroundColor Green
+Write-Host "============================================" -ForegroundColor Cyan
+Write-Host ""
+
+# Confirm before starting
+$Confirm = Read-Host "Do you want to reset your network configuration? (Y/N)"
+if ($Confirm -ne "Y") {
+    Write-Host "Operation canceled." -ForegroundColor Yellow
+    exit
+}
+
+# Step 1: Release current IP configuration
+Write-Host "`nReleasing current IP configuration..." -ForegroundColor Yellow
+ipconfig /release
+Start-Sleep -Seconds 2
+
+# Step 2: Flush DNS cache
+Write-Host "`nFlushing DNS resolver cache..." -ForegroundColor Yellow
+ipconfig /flushdns
+Start-Sleep -Seconds 2
+
+# Step 3: Reset Winsock catalog
+Write-Host "`nResetting Winsock catalog..." -ForegroundColor Yellow
+netsh winsock reset
+Start-Sleep -Seconds 2
+
+# Step 4: Reset TCP/IP stack
+Write-Host "`nResetting TCP/IP stack..." -ForegroundColor Yellow
+netsh int ip reset
+Start-Sleep -Seconds 2
+
+# Step 5: Renew IP configuration
+Write-Host "`nRenewing IP address..." -ForegroundColor Yellow
+ipconfig /renew
+Start-Sleep -Seconds 2
+
+# Step 6: Display new IP configuration
+Write-Host "`nDisplaying current network configuration..." -ForegroundColor Cyan
+ipconfig /all
+
+# Completion message
+Write-Host "`nNetwork reset complete! A system restart may be required for all changes to take effect." -ForegroundColor Green
+``` 
